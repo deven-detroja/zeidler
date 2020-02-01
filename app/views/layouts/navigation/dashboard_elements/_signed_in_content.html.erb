@@ -1,0 +1,61 @@
+<div id="main-content" class="col-sm-12 main-content">
+	<div class='wice-grid-containier'>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class='row-fluid'>
+					<div class='col-md-12'>
+						<h3 class="page-name">
+							<span id="user-name">Welcome, <%= current_user.first_name + ' ' + current_user.last_name %></span>		
+						</h3>
+					</div>
+				</div>
+				<div class='row-fluid'>
+					<div class='col-md-12'>
+						<p>Below are the list of Users</p>
+					</div>
+				</div>
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="wice-grid-containier">			
+					<div class='row-fluid'>
+						<div class='col-md-12'>
+							<%= grid(@tasks_grid) do |g|
+								
+								g.blank_slate  do
+    								content_tag :div, "No records found", class: 'well'
+  								end
+
+								g.column name: 'First Name', attribute: 'first_name' do |task|
+								    task.first_name
+								end
+
+								g.column name: 'Last Name', attribute: 'last_name' do |task|
+								    task.last_name
+								end
+
+								g.column name: 'Age', attribute: 'age' do |task|
+								    task.age
+								end
+
+								g.column name: 'Gender', attribute: 'gender', ordering:  false do |task|
+								    task.gender
+								end
+
+								g.column name: 'Country', attribute: 'country' do |task|
+								    task.country
+								end
+								g.column do |task|
+									current_user.id == task.id ? link_to('Edit', edit_user_registration_path(task)) : ''
+								    	
+								end
+							end -%>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zeidler</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<div class="row">
+	    <div class="col-sm-6 col-sm-offset-3">
+	      <% if flash[:notice].present? %>
+	        <div class="alert alert-info">
+	          <span class="glyphicon glyphicon-info-sign"></span>
+	          <%= flash[:notice] %>
+	        </div>
+	      <% end %>
+
+	      <% if flash[:alert].present? %>
+	        <div class="alert alert-danger">
+	          <span class="glyphicon glyphicon-exclamation-sign"></span>
+	          <%= flash[:alert] %>
+	        </div>
+	      <% end %>
+	    </div>
+	</div>
+  	<%= render 'layouts/navigation' %>
+    <%= yield %>
+  </body>
+</html>
