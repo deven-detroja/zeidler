@@ -1,33 +1,33 @@
 <div class="container" id="sign-up-form">
-  <div class="col-sm-8 col-sm-offset-2">
-  <div class='inner-container'>
-    <div class="row">
-      <div class="col-sm-offset-3 col-sm-6">
-        <h3>Sign up <small>it's free!</small></h3> 
-          <%= bootstrap_form_for(resource, 
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class='inner-container'>
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h3>Sign up</h3> 
+                    <%= bootstrap_form_for(resource, 
                        :as => resource_name, 
                        :url => registration_path(resource_name)) do |f| %>
 
-          <%= f.text_field :first_name, placeholder: 'First name', class: 'form-control' %>
-          <%= f.text_field :last_name, placeholder: 'Last name', class: 'form-control' %>
-          <%= f.text_field :email, placeholder: 'email', class: 'form-control' %>
-          <%= f.password_field :password, placeholder: 'password', class: 'form-control .has-error' %>
-          <%= f.password_field :password_confirmation, placeholder: 'password confirmation', class: 'form-control' %>
-          <%= f.number_field :age, :class => 'form-control', min: 10, max: 100  %>
-          <%= f.select :gender, ['Male', 'Female', 'Others'] %>
-          <%= f.label :country do %>Country <% end %> 
-          <%= f.country_select :country, priority_countries = ["India"], options = {}, html_options = {:class => "form-control", :id => "payment_country"} %>
-          <br>
-          <%= f.submit 'Sign up', class: 'form-control btn btn-primary login-button' %>
-          <br>
-        <% end %>
-      </div>
+                        <%= f.text_field :first_name, placeholder: 'First name', class: 'form-control' %>
+                        <%= f.text_field :last_name, placeholder: 'Last name', class: 'form-control' %>
+                        <%= f.text_field :email, placeholder: 'email', class: 'form-control' %>
+                        <%= f.password_field :password, placeholder: 'password', class: 'form-control .has-error' %>
+                        <%= f.password_field :password_confirmation, placeholder: 'password confirmation', class: 'form-control' %>
+                        <%= f.number_field :age, :class => 'form-control', placeholder: 'Age', min: 0, max: 100 %>
+                        <%= f.select :gender, ['Male', 'Female', 'Others'], :include_blank => true %>
+                        <%= f.label :country do %>Country <% end %> 
+                        <%= f.country_select :country, priority_countries = ["India"], options = {}, html_options = {:class => "form-control", :id => "user_country"} %>
+                            <br>
+                        <%= f.submit 'Sign up', class: 'form-control btn btn-primary login-button' %>
+                        <br>
+                    <% end %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <br>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-sm-offset-3 col-sm-6">
-        <br>
-      </div>
-    </div>
-  </div>
-  </div>
 </div>
