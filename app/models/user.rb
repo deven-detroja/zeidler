@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable
+           :recoverable, :rememberable, :validatable
 
     PASSWORD_FORMAT = /\A(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[[:^alnum:]])/x
     EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
