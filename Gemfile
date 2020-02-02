@@ -15,7 +15,7 @@ gem 'puma', '~> 3.7'
 
 gem 'devise'
 gem 'bootstrap_form'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'country_select', '~> 4.0'
